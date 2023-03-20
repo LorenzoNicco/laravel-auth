@@ -14,13 +14,20 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <h3>{{ $project->slug }}</h3>
+                                <h6>{{ $project->slug }}</h6>
                             </li>
                             <li class="list-group-item">
                                 <p class="card-text">{{ $project->description }}</p>
                             </li>
                             <li class="list-group-item">
                                 {{ $project->id }}
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary mb-2">Dettagli</a>
+                                
+                                <a href="#" class="btn btn-warning mb-2">Modifica</a>
+                                
+                                <a href="#" class="btn btn-danger mb-2">Elimina</a>
                             </li>
                         </ul>
                     </div>

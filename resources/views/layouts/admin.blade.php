@@ -29,7 +29,19 @@
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}" href="{{route('admin.dashboard')}}">
+                            <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-secondary' : '' }}" href="{{route('admin.projects.index')}}">
+                            <i class="fa-solid fa-trowel-bricks"></i> Projects
+                        </a>
+                    </li>
+                </ul>
                 <div class="navbar-nav">
                     <div class="nav-item text-nowrap ms-2">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -45,7 +57,7 @@
 
             <div class="container-fluid vh-100">
                 <div class="row h-100">
-                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
+                    {{-- <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
                         <div class="position-sticky pt-3">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -63,7 +75,7 @@
 
 
                         </div>
-                    </nav>
+                    </nav> --}}
 
                     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                         @yield('content')
