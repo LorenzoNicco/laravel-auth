@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
-        <h1 class="text-center">Lista progetti</h1>
+        <h1 class="text-center text-light my-5">Lista progetti</h1>
 
         <div class="col-md-8">
             <div class="row g-3 justify-content-between">
