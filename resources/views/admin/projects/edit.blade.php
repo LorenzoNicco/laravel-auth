@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1 class="text-center text-light my-5">Modifica Progetto<span class="text-danger">*</span></h1>
+    <h1 class="text-center text-light my-5">Modifica Progetto</h1>
 
     @include('partials.error')
 
@@ -10,7 +10,7 @@
         @method('PUT')
 
         <div class="mb-3">
-            <label for="title-input" class="form-label text-light">Titolo</label>
+            <label for="title-input" class="form-label text-light">Titolo<span class="text-danger">*</span></label>
             <input required type="text" class="form-control" id="title-input" value="{{ old('title', $project->title) }}" name="title" placeholder="Inserisci un titolo">
         </div>
         

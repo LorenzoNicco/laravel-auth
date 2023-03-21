@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+@include('partials.success')
+
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
         <h1 class="text-center text-light my-5">Lista progetti</h1>
