@@ -27,7 +27,12 @@
                                 
                                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning mb-2">Modifica</a>
                                 
-                                <a href="#" class="btn btn-danger mb-2">Elimina</a>
+                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Confermi di voler eliminare questo progetto?')">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button class="btn btn-danger">Elimina</button>
+                                </form>
                             </li>
                         </ul>
                     </div>
