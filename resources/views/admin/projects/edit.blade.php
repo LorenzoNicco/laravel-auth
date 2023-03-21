@@ -3,6 +3,8 @@
 @section('content')
     <h1 class="text-center text-light my-5">Modifica Progetto<span class="text-danger">*</span></h1>
 
+    @include('partials.error')
+
     <form action="{{ route('admin.projects.update', $project->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -18,7 +20,7 @@
         </div>
 
         <div>
-            <p>
+            <p class="text-light">
                 I campi contrassegnati con <span class="text-danger">*</span> sono obbligatori
             </p>
         </div>

@@ -3,6 +3,8 @@
 @section('content')
     <h1 class="text-center text-light my-5">Inserisci un nuovo progetto</h1>
 
+    @include('partials.error')
+
     <form action="{{ route('admin.projects.store') }}" method="POST">
         @csrf
 
@@ -17,7 +19,7 @@
         </div>
 
         <div>
-            <p>
+            <p class="text-light">
                 I campi contrassegnati con <span class="text-danger">*</span> sono obbligatori
             </p>
         </div>

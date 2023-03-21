@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|unique:projects,title',
-            'description' => 'required'
+            'description' => 'required|min_digits:10'
         ];
     }
 }
