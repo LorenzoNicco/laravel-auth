@@ -29,7 +29,7 @@
                                 
                                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning mb-2">Modifica</a>
                                 
-                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal_{{ $project->id }}">Elimina</button>
 
                                 {{-- eliminazione tramite onclick --}}
                                 {{-- <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -40,7 +40,7 @@
                                 </form> --}}
 
                                 {{-- eliminazione tramite modale --}}
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="deleteModal_{{ $project->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
                                         <div class="modal-header">
@@ -48,7 +48,7 @@
                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Confermi di voler eliminare questo progetto?
+                                            Confermi di voler eliminare {{ $project->title }}?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
@@ -61,7 +61,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
