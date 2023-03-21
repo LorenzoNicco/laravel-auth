@@ -25,7 +25,7 @@
                             <li class="list-group-item">
                                 <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary mb-2">Dettagli</a>
                                 
-                                <a href="#" class="btn btn-warning mb-2">Modifica</a>
+                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning mb-2">Modifica</a>
                                 
                                 <a href="#" class="btn btn-danger mb-2">Elimina</a>
                             </li>
