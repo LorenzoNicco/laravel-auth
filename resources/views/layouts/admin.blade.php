@@ -38,6 +38,12 @@
                             <i class="fa-solid fa-trowel-bricks"></i> Projects
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.create' ? 'bg-secondary' : '' }}" href="{{route('admin.projects.create')}}">
+                            <i class="fa-solid fa-plus"></i> New Project
+                        </a>
+                    </li>
                 </ul>
                 <div class="navbar-nav">
                     <div class="nav-item text-nowrap ms-2">
@@ -52,7 +58,7 @@
                 </div>
             </header>
 
-            <div class="container-fluid bg-dark">
+            <div class="container-fluid bg-dark my-bg-size">
                 <div class="row h-100 justify-content-center">
                     {{-- <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
                         <div class="position-sticky pt-3">
