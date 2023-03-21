@@ -29,12 +29,39 @@
                                 
                                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning mb-2">Modifica</a>
                                 
-                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Confermi di voler eliminare questo progetto?')">
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
+
+                                {{-- eliminazione tramite onclick --}}
+                                {{-- <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     @csrf
                                     @method('DELETE')
 
                                     <button class="btn btn-danger">Elimina</button>
-                                </form>
+                                </form> --}}
+
+                                {{-- eliminazione tramite modale --}}
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="exampleModalLabel">Elimminazione elemento</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Confermi di voler eliminare questo progetto?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                            <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                @csrf
+                                                @method('DELETE')
+            
+                                                <button class="btn btn-danger">Elimina</button>
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </li>
                         </ul>
                     </div>
