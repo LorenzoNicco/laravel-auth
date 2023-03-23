@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 // utilities
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;

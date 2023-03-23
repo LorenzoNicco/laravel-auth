@@ -5,7 +5,7 @@
 
     @include('partials.error')
 
-    <form action="{{ route('admin.projects.store') }}" method="POST">
+    <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
@@ -22,6 +22,11 @@
             <p class="text-light">
                 I campi contrassegnati con <span class="text-danger">*</span> sono obbligatori
             </p>
+        </div>
+
+        <div class="mb-3">
+            <label for="image-input" class="form-label">Immagine</label>
+            <input class="form-control" type="file" id="image-input" accept="image/*">
         </div>
 
         <input type="submit" class="btn btn-primary">
