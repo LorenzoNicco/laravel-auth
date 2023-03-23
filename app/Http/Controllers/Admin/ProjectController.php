@@ -50,7 +50,7 @@ class ProjectController extends Controller
         $data['slug'] = Str::slug($data['title']);
 
         if (array_key_exists('img', $data)) {
-            $imgPath = Storage::put('projects_uploads', $data['img']);
+            $imgPath = Storage::put('projects', $data['img']);
             $data['img'] = $imgPath;
         }
 

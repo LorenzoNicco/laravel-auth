@@ -26,7 +26,7 @@
 
         <div class="mb-3">
             <label for="image-input" class="form-label">Immagine</label>
-            <input class="form-control" type="file" id="image-input" accept="image/*">
+            <input class="form-control" type="file" id="image-input" name="img" accept="image/*">
         </div>
 
         <input type="submit" class="btn btn-primary">
