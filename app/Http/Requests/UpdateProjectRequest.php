@@ -31,7 +31,8 @@ class UpdateProjectRequest extends FormRequest
                 'required',
                 Rule::unique('projects')->ignore($this->project->id)
             ],
-            'description' => 'required|min:10'
+            'description' => 'required|min:10',
+            'img' => 'nullable|image'
         ];
     }
 }

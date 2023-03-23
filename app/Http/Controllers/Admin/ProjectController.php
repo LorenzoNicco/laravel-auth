@@ -49,6 +49,11 @@ class ProjectController extends Controller
         $data = $request->validated();
         $data['slug'] = Str::slug($data['title']);
 
+        if (array_key_exists('img', $data)) {
+            $imgPath = Storage::put('projects_uploads', $data['img']);
+            $data['img'] = $imgPath;
+        }
+
         $newProject = Project::create($data);
 
         return redirect()->route('admin.projects.index')->with('success', 'Progetto creato con successo');

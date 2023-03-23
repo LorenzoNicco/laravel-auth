@@ -11,6 +11,8 @@
             <div class="row g-3 justify-content-between">
                 @foreach ($projects as $project)
                     <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('storage/'.$project->img) }}" class="card-img-top" alt="immagine">
+
                         <div class="card-body">
                             <h5 class="card-title">{{ $project->title }}</h5>
                         </div>
