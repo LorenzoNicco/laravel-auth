@@ -32,7 +32,8 @@ class UpdateProjectRequest extends FormRequest
                 Rule::unique('projects')->ignore($this->project->id)
             ],
             'description' => 'required|min:10',
-            'img' => 'nullable|image'
+            'img' => 'nullable|image',
+            'delete-img' => 'nullable'
         ];
     }
 }
