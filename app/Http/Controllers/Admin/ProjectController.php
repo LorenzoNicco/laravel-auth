@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 // utilities
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewProject;
 
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
@@ -55,6 +57,8 @@ class ProjectController extends Controller
         }
 
         $newProject = Project::create($data);
+
+        Mail::to('testMail@email.com')->send(new NewProject($newProject));
 
         return redirect()->route('admin.projects.index')->with('success', 'Progetto creato con successo');
     }
